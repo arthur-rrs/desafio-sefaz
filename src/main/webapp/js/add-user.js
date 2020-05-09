@@ -68,7 +68,7 @@ function AddUserView() {
 							+ '<button class="btn btn-danger btn-remove" type="button">Remover</button>'
 							+'</div>'
 							+'</div>'));
-			$form.find('.type option[value=' + type + ']').attr('selected','selected');
+			$form.find('.type option[value="' + type + '"]').attr('selected','selected');
 			$form.find('.ddd').mask('00');
 			$form.find('.number').mask('000000000');
 			$('.btn-remove').off('click');
