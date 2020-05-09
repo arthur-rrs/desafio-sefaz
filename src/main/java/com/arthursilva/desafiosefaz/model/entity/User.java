@@ -1,5 +1,6 @@
 package com.arthursilva.desafiosefaz.model.entity;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.CascadeType;
@@ -48,6 +49,10 @@ public class User {
 	        fetch = FetchType.EAGER
 	    )
 	private Collection<Phone> phones;
+	
+	public User() {
+		this.phones = new ArrayList<Phone>();
+	}
 	
 	public void addPhone(Phone phone) {
 		this.phones.add(phone);

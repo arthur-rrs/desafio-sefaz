@@ -5,6 +5,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.arthursilva.desafiosefaz.model.entity.Phone;
 import com.arthursilva.desafiosefaz.model.entity.User;
 import com.arthursilva.desafiosefaz.repository.UserRepository;
 import com.arthursilva.desafiosefaz.repository.factory.UserRepositoryFactory;
@@ -19,6 +20,10 @@ public class UserRepositoryTest {
 	
 	@Before
 	public void setUp() throws Exception {
+		Phone phone = new Phone();
+		phone.setDdd((short)81);
+		phone.setNumber("999999999");
+		phone.setType("Celular");
 		repository = new UserRepositoryFactory().getUserRepository();
 		repository
 		.findAll()
@@ -27,6 +32,7 @@ public class UserRepositoryTest {
 		user.setEmail("test@faker.com");
 		user.setName("test");
 		user.setPassword("123456");
+		user.addPhone(phone);
 	}
 		
 	@Test
